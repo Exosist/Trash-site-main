@@ -5,7 +5,8 @@ const bookmarks = [
     links: [
       { name: "Inbox", url: "https://mail.google.com" },
       {name: "Arbetsförnedringen", url: "https://arbetsformedlingen.se"},
-      {name: "LinkedIN", url: "https://linkedin.com"},
+      {name: "LinkedIn", url: "https://linkedin.com"},
+      {name: "Github", url: "https://Github.com"},
     ],
   },
   {
