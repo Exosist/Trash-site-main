@@ -12,7 +12,6 @@
   <body>
 
     <video id="background-video" autoplay loop muted poster="seaatnight.jpg">
-      <source src="https://prod-streaming-video-msn-com.akamaized.net/b9614d22-e2ed-4689-becb-265d3d831c47/608d6881-b9a5-4ea9-aa8d-165bae3f43ec.mp4" type="video/mp4">
       </video>
 
     <div id="search">
@@ -43,6 +42,24 @@
     <script src="bookmarks.js"></script>
     <script>
       const searchUrl = "https://google.com/search?q=";
+      const backgroundvideos = [
+         "https://prod-streaming-video-msn-com.akamaized.net/b9614d22-e2ed-4689-becb-265d3d831c47/608d6881-b9a5-4ea9-aa8d-165bae3f43ec.mp4",
+         "https://prod-streaming-video-msn-com.akamaized.net/f5edb46a-1c28-4fda-8cc4-640a50cb52ba/c2b8d880-c289-4954-a168-2a41cb874661.mp4",
+         "https://prod-streaming-video-msn-com.akamaized.net/8decc59b-4987-4cfe-a4c5-20306bc8b431/70753bd1-4ca2-47b8-a2d4-6deaf35fddf8.mp4",
+         "https://prod-streaming-video-msn-com.akamaized.net/15fc0eea-1091-4a28-a9b6-8caaf6013cf1/62b4c40f-ad3c-4099-a59a-bfbe324a461c.mp4",
+         "https://prod-streaming-video-msn-com.akamaized.net/c8dcdb6e-05d3-41f9-b2bc-b46a83f4315b/4bf214cf-1ff5-425a-a868-7b82cf0a03eb.mp4",
+         "https://prod-streaming-video-msn-com.akamaized.net/3f6ca508-598d-4cbd-a3e2-43deea7bc377/b60c553e-9f3f-4164-8850-700a9a73a899.mp4",
+         "https://prod-streaming-video-msn-com.akamaized.net/c633cd32-92ef-447f-876c-54c5c1a57484/d5a4b96f-01b4-4519-8470-62484e0b1b5b.mp4",
+      ]
+      function randomBackground(array) {
+        return array[Math.floor(Math.random() * array.length)] 
+      }
+
+      const video = document.getElementById("background-video")
+      const source = document.createElement('source');
+      source.setAttribute('src', randomBackground(backgroundvideos));
+      source.setAttribute('type', 'video/mp4');
+      video.appendChild(source);
       // Search on enter key event
       function search(e) {
         if (e.keyCode == 13) {
